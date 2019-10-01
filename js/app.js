@@ -10,3 +10,9 @@ class tomagotchi {
 }
 
 const Steven = new tomagotchi('0', '0', '0', '0');
+
+const gameplay =  {
+	hunger: 0,
+	sleepiness = 0,
+	boredom = 0,
+}
