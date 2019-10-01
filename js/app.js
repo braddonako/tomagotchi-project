@@ -9,3 +9,4 @@ class tomagotchi {
 	}
 }
 
+const Steven = new tomagotchi('0', '0', '0', '0');
