@@ -2,10 +2,10 @@ console.log('JavaScript locked and loaded baby');
 
 class Tomagotchi {
 		constructor (Hunger, sleepiness, boredom, age){
-		this.hunger = 1;
-		this.sleepiness = 1;
-		this.boredom = 1;
-		this.age = 1;
+		this.hunger = 0;
+		this.sleepiness = 0;
+		this.boredom = 0;
+		this.age = 0;
 	}
 	increaseHunger(){
 		const interval = setInterval(() => {
@@ -14,7 +14,7 @@ class Tomagotchi {
 			clearInterval(interval);
 			alert('Your tomigatchi has died from being too hungry. Please feed him next time');	
 			};
-		}, 4000) //run for each 7 seconds
+		}, 3000) //run for each 7 seconds
 
 	}
 	increaseSleepiness(){
@@ -26,7 +26,7 @@ class Tomagotchi {
 			clearInterval(interval);
 			alert('Your tomigotchi has died from sleep deprivation. Next time, give him some nyquil');	
 			};
-		}, 7000) //run for each seven second
+		}, 5000) //run for each seven second
 
 	}
 	increaseBoredom() {
@@ -52,22 +52,38 @@ class Tomagotchi {
 	feedMe(){
   	// I will create an event listener, that when the feedme button is clicked, 
   	// It will reduce the hunger by one. 
+  	$('#feed').on('click', () => { 
+  		console.log('button works');
+  		this.hunger -= 1;
+  	})
   }
   turnOffLights(){
   	//The getSleep will have an event listener on the sleepiness button. 
   	// Each time this button is clicked, it will reduce the sleepiness by 1
+  		$('#turnLightsOff').on('click', () => { 
+  		console.log('button works');
+  		this.sleepiness -= 3;
+  	})
   }
   iAmBored(){
   	// I will create an event listener, that when the bored button is clicked, it will reduce the boredom by 1
+  		$('#bored').on('click', () => { 
+  		console.log('button works');
+  		this.boredom -= 1;
+
+  	});
   }
 }
 
 const steve = new Tomagotchi();
 
-// steve.increaseHunger();
-// steve.increaseSleepiness();
-// steve.increaseBoredom();
-// steve.increaseAge();
+steve.increaseHunger();
+steve.increaseSleepiness();
+steve.increaseBoredom();
+steve.increaseAge();
+steve.feedMe();
+steve.turnOffLights();
+steve.iAmBored();
 
 
 
