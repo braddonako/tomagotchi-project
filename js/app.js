@@ -9,8 +9,8 @@ class Tomagotchi {
 	}
 	increaseHunger(){
 		const interval = setInterval(() => {
-			$('#hungerCount').text(this.hunger++);
-			if (this.hunger === 11){
+			$('#hungerCount').text(this.hunger+=2);
+			if (this.hunger >= 10){
 			clearInterval(interval);
 			alert('Your tomigatchi has died from being too hungry. Please feed him next time');	
 			};
@@ -21,8 +21,8 @@ class Tomagotchi {
 		//This method will run the same as check hunger. We will set the interbal to go up every 7 seconds
 		// If the interval hits 10, the tomigotchi will die
 	const interval = setInterval(() => {
-			$('#sleepinessCount').text(this.sleepiness++);
-			if (this.sleepiness === 11){
+			$('#sleepinessCount').text(this.sleepiness+=3);
+			if (this.sleepiness >= 11){
 			clearInterval(interval);
 			alert('Your tomigotchi has died from sleep deprivation. Next time, give him some nyquil');	
 			};
@@ -32,8 +32,8 @@ class Tomagotchi {
 	increaseBoredom() {
 		//This method will run the same as checkHunger and checkSleepiness, but will run at a different interval
 		const interval = setInterval(() => {
-			$('#boredomCount').text(this.boredom++);
-			if (this.boredom === 11){
+			$('#boredomCount').text(this.boredom+=2);
+			if (this.boredom >= 10){
 			clearInterval(interval);
 			alert('Your tomigotchi has died from being bored. You are a terrible owner.');	
 			};
@@ -74,38 +74,38 @@ class Tomagotchi {
   	});
   }
 
-//   }
+  }
 
-//   $(document).ready(function(e) {
-//     var width = $(document).width();
+  $(document).ready(function(e) {
+    var width = $(document).width();
 
-//     function goRight() {
-//         $("#animate").animate({
-//         left: width
-//       }, 5000, function() {
-//          setTimeout(goLeft, 50);
-//       });
-//     }
-//     function goLeft() {
-//         $("#animate").animate({
-//         left: 0
-//       }, 5000, function() {
-//          setTimeout(goRight, 50);
-//       });
-//     }
+    function goRight() {
+        $("#animate").animate({
+        left: width
+      }, 10000, function() {
+         setTimeout(goLeft, 100);
+      });
+    }
+    function goLeft() {
+        $("#animate").animate({
+        left: 0
+      }, 10000, function() {
+         setTimeout(goRight, 100);
+      });
+    }
 
-//     setTimeout(goRight, 50);
-// });
+    setTimeout(goRight, 100);
+});
 
 const steve = new Tomagotchi();
 
-// steve.increaseHunger();
-// steve.increaseSleepiness();
-// steve.increaseBoredom();
-// steve.increaseAge();
-// steve.feedMe();
-// steve.turnOffLights();
-// steve.iAmBored();
+steve.increaseHunger();
+steve.increaseSleepiness();
+steve.increaseBoredom();
+steve.increaseAge();
+steve.feedMe();
+steve.turnOffLights();
+steve.iAmBored();
 
 
  
