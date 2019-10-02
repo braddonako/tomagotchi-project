@@ -1,4 +1,4 @@
-img {
+/*img {
 	display: block;
 	height: 200px;
 	width: 125px;
@@ -7,7 +7,7 @@ img {
     left: 50%;
     margin-top: -50px;
     margin-left: -100px;
-}
+}*/
 
 body {
 	background-image: url(https://i.imgur.com/sTYcdgM.jpg);
@@ -23,4 +23,19 @@ h1 {
 
 h2, label {
 	color: rgba(102, 250, 14, .7);
+}
+
+#animate {
+	position: relative;
+    background: yellow;
+    width: 100px;
+    height: 100px;
+    display: block;
+	height: 200px;
+	width: 125px;
+	position: fixed;
+    top: 50%;
+    left: 50%;
+    margin-top: -50px;
+    margin-left: -100px;
 }
