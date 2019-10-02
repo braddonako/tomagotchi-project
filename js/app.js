@@ -77,13 +77,13 @@ class Tomagotchi {
 
 const steve = new Tomagotchi();
 
-steve.increaseHunger();
-steve.increaseSleepiness();
-steve.increaseBoredom();
-steve.increaseAge();
-steve.feedMe();
-steve.turnOffLights();
-steve.iAmBored();
+// steve.increaseHunger();
+// steve.increaseSleepiness();
+// steve.increaseBoredom();
+// steve.increaseAge();
+// steve.feedMe();
+// steve.turnOffLights();
+// steve.iAmBored();
 
 
 

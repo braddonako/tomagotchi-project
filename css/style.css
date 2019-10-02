@@ -21,6 +21,6 @@ h1 {
 	color: rgba(102, 250, 14, .7);
 }
 
-h2 {
+h2, label {
 	color: rgba(102, 250, 14, .7);
 }
