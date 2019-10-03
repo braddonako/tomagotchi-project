@@ -15,6 +15,7 @@ class Tomagotchi {
 			if (this.hunger >= 10){
 			clearInterval(interval);
 			alert('Your tomigatchi has died from being too hungry. Please feed him next time');	
+			location.reload();
 			};
 		}, 2000) //run for each 3 seconds
 
@@ -27,7 +28,9 @@ class Tomagotchi {
 			if (this.sleepiness >= 11){
 			clearInterval(interval);
 			alert('Your tomigotchi has died from sleep deprivation. Next time, give him some nyquil');	
+			location.reload();
 			};
+
 		}, 4000) //run for each seven second
 
 	}
@@ -38,7 +41,8 @@ class Tomagotchi {
 			if (this.boredom >= 10){
 			clearInterval(interval);
 			alert('Your tomigotchi has died from being bored. You are a terrible owner.');	
-			};
+			location.reload()
+			}; 
 		}, 1500) //run for each seven second
 	}
 	increaseAge(){
@@ -47,7 +51,8 @@ class Tomagotchi {
 			$('#ageCount').text(this.age++);
 			if (this.age === 20){
 			clearInterval(interval);
-			alert('Your pet is old AF. He is dead');	
+			alert('Your pet is old AF. He is dead');
+			location.reload();	
 			};
 		}, 10000) //run for each seven second 
 	}
@@ -119,6 +124,8 @@ steve.feedMe();
 steve.turnOffLights();
 steve.iAmBored();
 
+
+// location.reload()
 
  
 
