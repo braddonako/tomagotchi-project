@@ -23,7 +23,7 @@ class Tomagotchi {
 	increaseSleepiness(){
 		//This method will run the same as check hunger. We will set the interbal to go up every 7 seconds
 		// If the interval hits 10, the tomigotchi will die
-	const interval = setInterval(() => {
+		const interval = setInterval(() => {
 			$('#sleepinessCount').text(this.sleepiness+=3);
 			if (this.sleepiness >= 11){
 			clearInterval(interval);
@@ -49,20 +49,25 @@ class Tomagotchi {
 		// I will have a interval that will increase my pets age every 15 seconds.
 		const interval = setInterval(() => {
 			$('#ageCount').text(this.age++);
+				if (this.age > 6){
+  		$('#animate').attr('src', 'https://i.imgur.com/KcDLP2m.jpg');
+  		console.log(this.age);
+  		}
 			if (this.age === 20){
 			clearInterval(interval);
 			alert('Your pet is old AF. He is dead');
 			location.reload();	
 			};
-		}, 10000) //run for each seven second 
+		}, 10000);
+	 //run for each seven second 
 	}
 	feedMe(){
   	// I will create an event listener, that when the feedme button is clicked, 
   	// It will reduce the hunger by one. 
-  	$('#feed').on('click', () => { 
-  		console.log('button works');
-  		if (this.hunger >= -1){
-  		this.hunger -= 1;
+	  	$('#feed').on('click', () => { 
+	  	console.log('button works');
+	  	if (this.hunger >= -1){
+	  	this.hunger -= 1;
   	}
   	})
   }
@@ -84,14 +89,10 @@ class Tomagotchi {
   		this.boredom -= 1;
   	}
   	});
-  }
-  changeImage(){
-  	if (this.age > 1){
-  			$('animate').changeImage('https://i.imgur.com/ec1SWco.jpg');
-  		}
-  }
+  }  
 
   }
+
 
   $(document).ready(function(e) {
     var width = $(document).width();
@@ -125,7 +126,6 @@ steve.turnOffLights();
 steve.iAmBored();
 
 
-// location.reload()
 
  
 
