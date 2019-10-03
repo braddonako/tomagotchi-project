@@ -1,5 +1,7 @@
 console.log('JavaScript locked and loaded baby');
 
+alert('Object of the game: Take care of your tomagotchi. As you play the game, your pets hunger, sleepiness, and boredom will go up. Click the buttons below to reduce each category by 1 point. If any of the categories hit 10, they will die.');
+
 class Tomagotchi {
 		constructor (Hunger, sleepiness, boredom, age){
 		this.hunger = 0;
@@ -14,7 +16,7 @@ class Tomagotchi {
 			clearInterval(interval);
 			alert('Your tomigatchi has died from being too hungry. Please feed him next time');	
 			};
-		}, 3000) //run for each 7 seconds
+		}, 2000) //run for each 3 seconds
 
 	}
 	increaseSleepiness(){
@@ -26,7 +28,7 @@ class Tomagotchi {
 			clearInterval(interval);
 			alert('Your tomigotchi has died from sleep deprivation. Next time, give him some nyquil');	
 			};
-		}, 5000) //run for each seven second
+		}, 4000) //run for each seven second
 
 	}
 	increaseBoredom() {
@@ -37,24 +39,26 @@ class Tomagotchi {
 			clearInterval(interval);
 			alert('Your tomigotchi has died from being bored. You are a terrible owner.');	
 			};
-		}, 2000) //run for each seven second
+		}, 1500) //run for each seven second
 	}
 	increaseAge(){
 		// I will have a interval that will increase my pets age every 15 seconds.
 		const interval = setInterval(() => {
 			$('#ageCount').text(this.age++);
-			if (this.age === 11){
+			if (this.age === 20){
 			clearInterval(interval);
-			alert('Your tomigotchi has died from sleep deprivation. Next time, give him some nyquil');	
+			alert('Your pet is old AF. He is dead');	
 			};
-		}, 15000) //run for each seven second 
+		}, 10000) //run for each seven second 
 	}
 	feedMe(){
   	// I will create an event listener, that when the feedme button is clicked, 
   	// It will reduce the hunger by one. 
   	$('#feed').on('click', () => { 
   		console.log('button works');
+  		if (this.hunger >= -1){
   		this.hunger -= 1;
+  	}
   	})
   }
   turnOffLights(){
@@ -62,16 +66,24 @@ class Tomagotchi {
   	// Each time this button is clicked, it will reduce the sleepiness by 1
   		$('#turnLightsOff').on('click', () => { 
   		console.log('button works');
+  		if (this.sleepiness >= -1){
   		this.sleepiness -= 1;
+  	}
   	})
   }
   iAmBored(){
   	// I will create an event listener, that when the bored button is clicked, it will reduce the boredom by 1
   		$('#bored').on('click', () => { 
   		console.log('button works');
+  		if (this.boredom >= -1){
   		this.boredom -= 1;
-
+  	}
   	});
+  }
+  changeImage(){
+  	if (this.age > 1){
+  			$('animate').changeImage('https://i.imgur.com/ec1SWco.jpg');
+  		}
   }
 
   }
